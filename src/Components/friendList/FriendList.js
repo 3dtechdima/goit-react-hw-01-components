@@ -1,4 +1,5 @@
 import React from "react";
+import FriendsListItem from "./FriendsListItem";
 import { FriendsListContainer } from "./FriendsListStyled";
 
 const FriendList = (props) => {
@@ -7,22 +8,7 @@ const FriendList = (props) => {
     <FriendsListContainer>
       <ul className="friends-list">
         {friends.map((friend) => {
-          return (
-            <li className="friends-list__item" key={friend.id}>
-              <div className={friend.isOnline.toString()}>
-                {friend.isOnline}
-              </div>
-              <div>
-                <img
-                  className="avatar"
-                  src={friend.avatar}
-                  alt="{friend.name}"
-                  width="48"
-                />
-                <p className="name">{friend.name}</p>
-              </div>
-            </li>
-          );
+          return <FriendsListItem friend={friend} key={friend.id} />;
         })}
       </ul>
     </FriendsListContainer>
