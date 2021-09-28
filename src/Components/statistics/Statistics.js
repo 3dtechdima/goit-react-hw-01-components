@@ -1,5 +1,6 @@
 import React from "react";
 import { StatisticsContainer } from "./StatisticsSpyled";
+import PropTypes from "prop-types";
 
 const Statistics = (props) => {
   const { title, stats } = props;
@@ -18,6 +19,17 @@ const Statistics = (props) => {
       </ul>
     </StatisticsContainer>
   );
+};
+
+Statistics.propTypes = {
+  title: PropTypes.string,
+  stats: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      label: PropTypes.string,
+      percentage: PropTypes.number,
+    })
+  ).isRequired,
 };
 
 export default Statistics;

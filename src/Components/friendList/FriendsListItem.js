@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const FriendsListItem = (props) => {
   const { friend } = props;
@@ -16,6 +17,15 @@ const FriendsListItem = (props) => {
       </div>
     </li>
   );
+};
+
+FriendsListItem.propTypes = {
+  friend: PropTypes.shape({
+    avatar: PropTypes.string,
+    name: PropTypes.string,
+    isOnline: PropTypes.bool,
+    id: PropTypes.number,
+  }),
 };
 
 export default FriendsListItem;

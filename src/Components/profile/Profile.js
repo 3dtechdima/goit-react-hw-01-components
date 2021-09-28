@@ -1,6 +1,6 @@
 import React from "react";
 import { ProfileContainer } from "./ProfileSyled";
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 
 const Profile = (props) => {
   const { avatar, name, tag, location, stats } = props;
@@ -25,18 +25,16 @@ const Profile = (props) => {
   );
 };
 
-// Profile.propTypes = {
-//   user: PropTypes.shape({
-//     avatar: PropTypes.string,
-//     name: PropTypes.string,
-//     tag: PropTypes.string,
-//     location: PropTypes.string,
-//     stats: PropTypes.shape({
-//       followers: PropTypes.number,
-//       views: PropTypes.number,
-//       likes: PropTypes.number,
-//     }),
-//   }),
-// };
+Profile.propTypes = {
+  avatar: PropTypes.string,
+  name: PropTypes.string,
+  tag: PropTypes.string,
+  location: PropTypes.string,
+  stats: PropTypes.shape({
+    followers: PropTypes.number,
+    views: PropTypes.number,
+    likes: PropTypes.number,
+  }),
+};
 
 export default Profile;
